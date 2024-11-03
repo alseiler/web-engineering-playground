@@ -26,10 +26,14 @@ describe('toggleComments', () => {
   });
 
   it('should display comments when "Show comments" is clicked', () => {
+    const showHideBtn =
+      document.querySelector<HTMLButtonElement>('button.show-hide');
+    const commentWrapper = document.querySelector('.comment-wrapper');
+    
     // Initial state: comments are hidden
     expect(commentWrapper?.style.display).toBe('none');
     expect(showHideBtn?.textContent).toBe('Show comments');
-
+    
     // Simulate click event
     showHideBtn?.click();
 
